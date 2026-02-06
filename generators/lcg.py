@@ -4,3 +4,7 @@ def lcg_generator(seed, a=1664525, c=1013904223, m=2**32):
         state = (a * state + c) % m
         yield state #renvoie le nombre et met la fonction en pause 
 
+
+def lcg_normalized(gen, m=2**32):
+    while True:
+        yield next(gen) / m
