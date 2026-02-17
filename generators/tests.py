@@ -74,22 +74,3 @@ def ks_test(data):
 
 from mt19937.py import mt19937
 from os_random.py import os_random
-
-N = 1_000_000  # 1 million d’octets
-
-print("=== MT19937 ===")
-mt_data = generate_mt_bytes(N)
-
-print("Entropie:", shannon_entropy(mt_data))
-print("Chi²:", chi_square_test(mt_data))
-print("Autocorr:", autocorrelation(mt_data))
-print("KS:", ks_test(mt_data))
-
-
-print("\n=== os.urandom ===")
-os_data = generate_os_bytes(N)
-
-print("Entropie:", shannon_entropy(os_data))
-print("Chi²:", chi_square_test(os_data))
-print("Autocorr:", autocorrelation(os_data))
-print("KS:", ks_test(os_data))
