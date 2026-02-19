@@ -8,3 +8,4 @@ class LCG:
     def next(self):
         self.state = (self.a * self.state + self.c) % self.m
         return self.state
+    
